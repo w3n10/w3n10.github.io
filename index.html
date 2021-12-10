@@ -1,1 +1,369 @@
-Hello world!
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Бузанов Дмитрий Владимирович. Лейпясуо. 2021 г.</title>
+        <meta name="description" content="Бузанов Дмитрий Владимирович. Лейпясуо. 2021 г.">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+        <link rel="icon" type="image/png" href="/static/img/favicon.png">
+        <style>
+            code,tt {
+                font-family: Menlo,Consolas,"Courier New",monospace;
+                white-space: nowrap;
+                padding: 1px 3px 2px;
+                border-radius: 3px;
+                color: #000;
+                background-color: #777;
+                font-size: .9em
+            }
+
+            pre {
+                margin-top: 0;
+                white-space: pre;
+                position: relative
+            }
+
+            pre code {
+                display: block;
+                color: #aaa;
+                background: #383235;
+                white-space: pre;
+                font-weight: 400;
+                overflow: auto;
+                padding: 18px 48px 24px;
+                margin-left: -8px;
+                margin-right: -8px;
+                font-size: .85em;
+                border-radius: 6px
+            }
+
+            pre code>span:before {
+                position: absolute;
+                right: 8px;
+                top: 2px;
+                font-family: sans-serif;
+                color: #777
+            }
+
+            pre code>span.html:before,pre code>span.xml:before {
+                content: 'HTML'
+            }
+
+            pre code>span.javascript:before {
+                content: 'JavaScript'
+            }
+
+            .apache .sqbracket,pre .comment,pre .deletion,pre .doctype,pre .javadoc,pre .pi,pre .shebang,pre .template_comment {
+                color: #fff
+            }
+
+            pre .apache .tag,pre .clojure .title,pre .css .tag,pre .flow,pre .http .title,pre .ini .title,pre .keyword,pre .lisp .title,pre .nginx .title,pre .request,pre .status,pre .tag .title,pre .tex .command,pre .winutils {
+                font-weight: 700
+            }
+
+            .download {
+                display: inline-block;
+                color: #fff;
+                border: 1px solid rgba(255,255,255,.3);
+                font-size: 115%;
+                line-height: 3;
+                padding: 0 2em;
+                transition: .2s all;
+                border-radius: 6px
+            }
+
+            .download:hover {
+                border-color: #fff
+            }
+
+            .switch-group {
+                font-size: 14px
+            }
+
+            .switch {
+                color: #fff;
+                border: 1px dashed rgba(255,255,255,.3);
+                border-radius: 6px;
+                padding: 1px 5px 2px;
+                transition: .2s all;
+                cursor: pointer
+            }
+
+            .switch:hover {
+                color: #bbb;
+                border: 1px dashed #fff
+            }
+
+            .key,.switch.active {
+                color: #000;
+                background-color: #777;
+                border: 1px solid #777;
+                cursor: default
+            }
+
+            .key {
+                cursor: pointer;
+                margin: 0;
+                position: relative
+            }
+
+            .key:active {
+                top: 1px
+            }
+
+            body {
+                font-family: sans-serif;
+                line-height: 1.6;
+                background-color: #1e1f24;
+                color: #fff;
+                display: flex;
+                margin: 0;
+                flex-direction: column;
+                min-height: 100vh
+            }
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                border-bottom: 1px solid rgba(255,255,255,.3);
+                transition: all .2s
+            }
+
+            a:hover {
+                border-bottom-color: #fff
+            }
+
+            .floor {
+                position: relative
+            }
+
+            .floor__max-width {
+                max-width: 760px;
+                padding: 0 1em;
+                margin: auto;
+                position: relative
+            }
+
+            .floor--header {
+                background-color: rgba(255,255,255,.06)
+            }
+
+            .floor--main {
+                padding: 2em 0 3em;
+                flex-grow: 1
+            }
+
+            .floor--footer {
+                padding: 2em 0;
+                flex-shrink: 0;
+                font-size: 14px;
+                opacity: .8;
+                transition: all .2s
+            }
+
+            .floor--footer:hover {
+                opacity: 1
+            }
+
+            .floor--footer .floor__max-width:before {
+                content: '';
+                position: absolute;
+                top: -2em;
+                width: 50%;
+                height: 1px;
+                background-image: linear-gradient(to right,rgba(255,255,255,.5),rgba(255,255,255,0))
+            }
+
+            .menu {
+                list-style: none;
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 2px;
+                margin: 0;
+                padding: 0
+            }
+
+            .menu__item {
+                display: inline-block
+            }
+
+            a.menu__link {
+                border-bottom: none;
+                display: inline-block;
+                padding: 10px 1em 8px;
+                opacity: .7;
+                border-bottom: 1px solid transparent
+            }
+
+            a.menu__link.is-current {
+                background-color: rgba(255,255,255,.1)
+            }
+
+            a.menu__link.is-section {
+                border-bottom-color: #fff
+            }
+
+            a.menu__link:hover {
+                background-color: rgba(255,255,255,.1);
+                border-bottom-color: #fff;
+                opacity: 1
+            }
+
+            .lead {
+                margin-bottom: 1em
+            }
+
+            .photos-by {
+                margin-top: .5em;
+                font-size: 14px;
+                text-align: right;
+                opacity: .8;
+                transition: all .2s
+            }
+
+            .photos-by:hover {
+                opacity: 1
+            }
+
+            .num {
+                font-family: Georgia,serif;
+                font-size: 125%;
+                line-height: .5
+            }
+
+            pre+.after-pre {
+                margin-top: -1em
+            }
+
+            i.uc {
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                top: -.1em;
+                width: 1em;
+                height: 1em;
+                background-image: url(https://ucarecdn.com/6e7a7757-397f-4341-a61f-0223c5a5bd97/-/preview/80x80/-/inline/no/uc-logo-mark-80x80.png);
+                background-size: 100%
+            }
+
+            p {
+                margin-bottom: 1em
+            }
+
+            ol,pre,ul {
+                margin-bottom: 2em
+            }
+
+            h1,h2,h3,h4 {
+                margin-top: 1.5em;
+                margin-bottom: .5em
+            }
+        </style>
+    </head>
+    <body>
+        <header class="floor floor--header">
+            <div class="floor__max-width">
+                <nav>
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="/" class="menu__link is-current">Fotorama</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="/docs/4/" class="menu__link">Docs</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="floor floor--main">
+            <div class="floor__max-width">
+                <div class="lead">Прогулка по девственному первому снегу. Ноябрь 2021 г.</div>
+                <script>
+                    $(function() {
+                        var $window = $(window)
+                          , $body = $('body')
+                          , $fotorama = $('#fotorama')
+                          , pixelRatio = window.devicePixelRatio || 1
+                          , width = Math.min(760 * pixelRatio, 1280)
+                          , ratio = 1.5
+                          , thumbHeight = 56
+                          , thumbWidth = thumbHeight * ratio
+                          , album = {
+                            by: {
+                                href: 'https://unsplash.com/',
+                                title: 'Unsplash'
+                            },
+                            uuids: ['c21bd8a5-4ac7-417d-bc83-f0e3f3ccea8c',
+									'6a72a9b9-e1a5-46d6-aefa-640288fb2ad4',
+									'5c9cdf81-940a-43e7-a231-726593149656',
+									'6b079074-9bbd-4889-851c-d996765abaa2',
+									'b5274649-dd39-427c-b1a2-4f83679d6f37',
+									'bd4e87b4-8e12-4bf6-af77-478ceaccf41d',
+									'd1e4ab10-c601-41a6-920d-c36269f4cd6d',
+									'3ebe4d3c-f516-4baf-ba14-faf09ef30340',
+									'5d035c0d-37b9-4785-8873-18b01b692f3e',
+									'204c388f-2a2d-4723-95f5-32a7830fb025',
+									'2f466e0c-2583-425e-8fd4-6a94ab759615',
+									'7b75fab2-2fb1-4350-9c69-73caeb84a77d',
+									'3a147fa3-fd18-41db-b33d-031cc081038d',
+									'9e6337f1-8a21-46bb-946d-cbe60e7a02bc',
+									'd8c8c373-cb0b-4dc2-8b1d-af2e251e9e3d',
+									'e680c13f-0f56-41ac-9569-5698a7a54da3',
+									'7f2c9516-304d-49ba-a97d-98aff370e03d',
+									'2fc9e187-17a1-457d-ad68-f672ead79d7b',
+									'095fd2b7-ce2e-4256-907c-1b70f9f013fb',
+									'5cf2121c-3373-4a9e-afb7-7052e4cdc1a8',
+									'1f9b6e90-dce0-45ba-98a9-1211e95c7de9',
+									'c953bf08-5532-4246-b674-2cea150805ed']
+                        };
+
+                        var data = $.map(album.uuids, function(uuid) {
+                            var full = 'https://ucarecdn.com/' + uuid + '/';
+                            return {
+                                full: full,
+                                img: full + '-/stretch/off/-/resize/' + width + 'x/',
+                                thumb: full + '-/scale_crop/' + (thumbWidth * pixelRatio) + 'x' + (thumbHeight * pixelRatio) + '/center/',
+                                id: uuid
+                            }
+                        });
+
+                        $fotorama.fotorama({
+                            data: data,
+                            clicktransition: 'dissolve',
+                            width: '100%',
+                            ratio: ratio,
+                            hash: true,
+                            maxheight: '100%',
+                            nav: 'thumbs',
+                            margin: 2,
+                            shuffle: true,
+                            thumbmargin: 2,
+                            thumbwidth: thumbWidth,
+                            thumbheight: thumbHeight,
+                            allowfullscreen: 'native',
+                            keyboard: {
+                                space: true
+                            },
+                            shadows: false,
+                            fit: 'cover'
+                        });
+
+                        $('#photos-by').html('Photos by <a href="' + album.by.href + '">' + album.by.title + '</a>');
+                    });
+                </script>
+                <div id="fotorama"></div>
+            </div>
+        </main>
+        <footer class="floor floor--footer">
+            <div class="floor__max-width">
+                <p>© 2021, S.Z.</p>
+                <p>
+                    <i class="uc"></i>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
