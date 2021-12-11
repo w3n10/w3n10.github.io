@@ -306,7 +306,7 @@
                           , $fotorama = $('#fotorama')
                           , pixelRatio = window.devicePixelRatio || 1
                           , width = Math.min(760 * pixelRatio, 1280)
-                          , ratio = 0.67
+                          , ratio = 1.5
                           , thumbHeight = 56
                           , thumbWidth = thumbHeight * ratio
                           , album = {
@@ -384,7 +384,7 @@
                             maxheight: '100%',
                             nav: 'thumbs',
                             margin: 2,
-                            shuffle: true,
+                            shuffle: false,
                             thumbmargin: 2,
                             thumbwidth: thumbWidth,
                             thumbheight: thumbHeight,
@@ -393,7 +393,7 @@
                                 space: true
                             },
                             shadows: false,
-                            fit: 'cover'
+                            fit: 'contain'
                         });
 
                         $('#photos-by').html('Photos by <a href="' + album.by.href + '">' + album.by.title + '</a>');
